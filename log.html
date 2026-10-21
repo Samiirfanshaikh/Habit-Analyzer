@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log Habit - HabitAI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-container">
+      <div class="logo">HabitAI</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="predictions.html">Predictions</a></li>
+        <li><a href="log.html" class="active">Log Habit</a></li>
+        <li><a href="history.html">History</a></li>
+        <li><a href="insights.html">Insights</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="#" class="btn-outline" onclick="window.logout(); return false;">Sign Out</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container page-spacing">
+    <div class="grid">
+      <div class="card">
+        <h2>📝 New Entry</h2>
+        <p class="section-copy">Log your daily habit data below for sleep, study, and exercise.</p>
+        <form id="logForm">
+          <div class="form-group">
+            <label for="logDate">Date</label>
+            <input type="date" id="logDate" name="logDate" required>
+          </div>
+          <div class="form-group">
+            <label for="sleep">Sleep (hours)</label>
+            <input type="number" id="sleep" name="sleep" min="0" max="12" step="0.5" placeholder="e.g., 7.5">
+          </div>
+          <div class="form-group">
+            <label for="study">Study (hours)</label>
+            <input type="number" id="study" name="study" min="0" max="10" step="0.5" placeholder="e.g., 2.0">
+          </div>
+          <div class="form-group">
+            <label for="exercise-type">Exercise</label>
+            <select id="exercise-type" name="exerciseType">
+              <option value="no">No Exercise</option>
+              <option value="minutes">Minutes Exercised</option>
+            </select>
+            <input type="number" id="exercise-minutes" name="exerciseMinutes" min="1" max="180" placeholder="Enter minutes" style="display: none; margin-top: 0.5rem;">
+          </div>
+          <button type="submit" class="cta-btn full-width">Save Entry</button>
+        </form>
+      </div>
+
+      <div class="card">
+        <h3>💡 Logging Tips</h3>
+        <ul style="line-height: 2; opacity: 0.9; padding-left: 1.2rem;">
+          <li>Be consistent — log every day</li>
+          <li>Sleep: aim for 7-8 hours</li>
+          <li>Study: 2-4 hours is a solid range</li>
+          <li>Exercise: even 15 min counts</li>
+          <li>Use the same time daily for better tracking</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

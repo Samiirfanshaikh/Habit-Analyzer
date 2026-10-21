@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - HabitAI</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-container">
+      <div class="logo">HabitAI</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="dashboard.html" class="active">Dashboard</a></li>
+        <li><a href="predictions.html">Predictions</a></li>
+        <li><a href="log.html">Log Habit</a></li>
+        <li><a href="history.html">History</a></li>
+        <li><a href="insights.html">Insights</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="#" class="btn-outline" onclick="window.logout(); return false;">Sign Out</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container page-spacing">
+    <div class="dashboard-header">
+      <h1 class="page-title">Dashboard</h1>
+      <p class="subtitle">Real-time habit analytics and behavioral trends</p>
+    </div>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-number" id="momentumScore">—</div>
+        <div class="stat-label">Momentum Score</div>
+        <div class="stat-grade" id="momentumGrade">—</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" id="driftDays">0</div>
+        <div class="stat-label">Drift Days</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" id="consistency">—</div>
+        <div class="stat-label">Consistency</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" id="streak">0</div>
+        <div class="stat-label">Current Streak</div>
+      </div>
+    </div>
+
+    <div class="tabs">
+      <button class="tab-btn active" data-filter="7">7 Days</button>
+      <button class="tab-btn" data-filter="15">15 Days</button>
+      <button class="tab-btn" data-filter="30">30 Days</button>
+      <button class="tab-btn" data-filter="all">All Time</button>
+    </div>
+
+    <div class="charts-container">
+      <div class="chart-card">
+        <h3>Daily Performance</h3>
+        <canvas id="performanceChart"></canvas>
+      </div>
+      <div class="chart-card">
+        <h3>All Time Trend</h3>
+        <canvas id="weeklyTrendChart"></canvas>
+      </div>
+    </div>
+
+    <div class="insight-card">
+      <h4>🤖 AI Insight</h4>
+      <p id="aiInsightText">Start logging your habits to see AI-powered insights and predictions.</p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In - HabitAI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-container">
+      <div class="logo">HabitAI</div>
+    </div>
+  </nav>
+
+  <section class="auth-section">
+    <div class="auth-card">
+      <h1>Welcome Back</h1>
+      <p class="auth-subtext">Sign in to continue tracking your habits and predictions.</p>
+      
+      <form id="signinForm" class="auth-form">
+        <div class="form-group">
+          <input type="email" id="email" name="email" placeholder="Email address" required autocomplete="email">
+        </div>
+        <div class="form-group">
+          <input type="password" id="password" name="password" placeholder="Password" required autocomplete="current-password">
+        </div>
+        <button type="submit" class="cta-btn full-width">Sign In</button>
+      </form>
+
+      <p id="errorMsg" class="auth-error" style="display: none; margin-top: 1rem; text-align: center; color: #ef4444;"></p>
+      
+      <p style="margin-top: 1rem; text-align: center; opacity: 0.8;">
+        Don't have an account? <a href="signup.html" style="color: var(--primary-light); text-decoration: none; font-weight: 600;">Sign Up</a>
+      </p>
+    </div>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>

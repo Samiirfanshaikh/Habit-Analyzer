@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Insights - HabitAI</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-container">
+      <div class="logo">HabitAI</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="predictions.html">Predictions</a></li>
+        <li><a href="log.html">Log Habit</a></li>
+        <li><a href="history.html">History</a></li>
+        <li><a href="insights.html" class="active">Insights</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="#" class="btn-outline" onclick="window.logout(); return false;">Sign Out</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container page-spacing">
+    <div class="dashboard-header">
+      <h1 class="page-title">Behavioral Insights</h1>
+      <p class="subtitle">Pattern analysis, risk detection, and habit recommendations</p>
+    </div>
+
+    <div class="insight-card" style="margin-bottom: 2rem;">
+      <h4>Momentum Score</h4>
+      <div class="stat-number" id="insightsMomentum">—</div>
+      <div class="progress-container">
+        <div class="progress-bar">
+          <div class="progress-fill" id="momentumProgress" style="width: 0%;"></div>
+        </div>
+        <div style="display: flex; justify-content: space-between; margin-top: 0.5rem; font-size: 0.85rem;">
+          <span id="momentumLabel" style="opacity: 0.8;">—</span>
+          <span id="momentumPercent">0%</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="cards-grid">
+      <div class="card">
+        <h3>Pattern Analysis</h3>
+        <div id="patternInsights">
+          <p>Loading insights...</p>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Risk Signals</h3>
+        <ul id="riskFactors" style="list-style: none; padding: 0; line-height: 1.8;">
+          <li>Loading risk data...</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="insight-card" style="margin-top: 2rem;">
+      <h4>🤖 AI Recommendations</h4>
+      <ul id="recommendations" style="list-style: none; padding: 0; margin-top: 0.5rem; line-height: 1.8;">
+        <li>Loading recommendations...</li>
+      </ul>
+    </div>
+
+    <div class="chart-card" style="margin-top: 2rem;">
+      <h3>Consistency Trend (30 Days)</h3>
+      <div style="position: relative; height: 300px;">
+        <canvas id="consistencyChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

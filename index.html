@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HabitAI - Predict Habit Failure</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="container nav-container">
+    <div class="logo">HabitAI</div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="predictions.html">Predictions</a></li>
+      <li><a href="log.html">Log Habit</a></li>
+      <li><a href="history.html">History</a></li>
+      <li><a href="insights.html">Insights</a></li>
+    </ul>
+    <div class="nav-actions" id="navAuth">
+      <a href="signin.html" class="btn-outline" id="navSignIn">Sign In</a>
+      <a href="signup.html" class="cta-btn" id="navSignUp">Sign Up</a>
+      <a href="#" class="btn-outline hidden" id="navSignOut" onclick="window.logout(); return false;">Sign Out</a>
+    </div>
+  </div>
+</nav>
+  <section class="hero">
+    <div class="container hero-content">
+      <h1>Stop Guessing. Predict Habit Failure.</h1>
+      <p>
+        HabitAI analyzes your behavior patterns, detects early drift,
+        and predicts when your habits are likely to break — before it happens.
+      </p>
+      <div class="hero-buttons">
+        <a href="dashboard.html" class="cta-btn" id="heroDashboard">Open Dashboard</a>
+        <a href="log.html" class="secondary-btn" id="heroLog">Log Habit</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="features container">
+    <h2 class="section-title">How to Track Your Habits</h2>
+    <div class="cards-grid">
+      <div class="card">
+        <h3>1. Sign In First</h3>
+        <p>Start with the sign-in page so your habit progress is saved and private.</p>
+      </div>
+      <div class="card">
+        <h3>2. Log Your Habit Data</h3>
+        <p>Enter daily values for sleep, study, and exercise to build your habit history.</p>
+      </div>
+      <div class="card">
+        <h3>3. Review History & Trends</h3>
+        <p>See your data, discover drift, and track consistency over time.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="preview container">
+    <h2 class="section-title">Daily Habit Data</h2>
+    <div class="prediction-preview-grid">
+      <div class="prediction-preview-card risk-low">
+        <h4>Log Today</h4>
+        <div class="prediction-value">Sleep • Study • Exercise</div>
+        <div class="prediction-label">Step 1: Record your day</div>
+      </div>
+      <div class="prediction-preview-card risk-medium">
+        <h4>Capture Progress</h4>
+        <div class="prediction-value">Track entries</div>
+        <div class="prediction-label">Step 2: Save your habit data</div>
+      </div>
+      <div class="prediction-preview-card risk-high">
+        <h4>Use Your Data</h4>
+        <div class="prediction-value">Analyze trends</div>
+        <div class="prediction-label">Step 3: Check history</div>
+      </div>
+    </div>
+    <div class="prediction-note">
+      Log your habits first, then enter the data for each day to see your history grow.
+    </div>
+  </section>
+
+  <section class="cta container">
+    <h2>Start Tracking Before You Fall Off</h2>
+    <a href="dashboard.html" class="cta-btn" id="ctaDashboard">Go to Dashboard</a>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 HabitAI • Offline AI Habit Intelligence System</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

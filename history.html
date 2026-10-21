@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>History - HabitAI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-container">
+      <div class="logo">HabitAI</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="predictions.html">Predictions</a></li>
+        <li><a href="log.html">Log Habit</a></li>
+        <li><a href="history.html" class="active">History</a></li>
+        <li><a href="insights.html">Insights</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="#" class="btn-outline" onclick="window.logout(); return false;">Sign Out</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container page-spacing">
+    <div class="dashboard-header">
+      <h1 class="page-title">History & Data</h1>
+      <p class="subtitle">Your complete habit log and performance records</p>
+    </div>
+
+    <div class="stats-grid history-stats">
+      <div class="stat-card">
+        <div class="stat-number" id="history-total">—</div>
+        <div class="stat-label">Total Entries</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" id="history-avg">—</div>
+        <div class="stat-label">Avg Score</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" id="history-exercise">0</div>
+        <div class="stat-label">Total Exercise (min)</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number" id="history-streak">0</div>
+        <div class="stat-label">Longest Streak</div>
+      </div>
+    </div>
+
+    <div class="history-filters">
+      <button class="tab-btn active" data-filter="7">7 Days</button>
+      <button class="tab-btn" data-filter="15">15 Days</button>
+      <button class="tab-btn" data-filter="30">30 Days</button>
+      <button class="tab-btn" data-filter="all">All Time</button>
+    </div>
+
+    <div class="table-wrapper">
+      <table class="history-table">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Score</th>
+            <th>Sleep (hrs)</th>
+            <th>Study (hrs)</th>
+            <th>Exercise</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="history-tbody">
+          <tr>
+            <td colspan="6" class="empty-text">Loading history...</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

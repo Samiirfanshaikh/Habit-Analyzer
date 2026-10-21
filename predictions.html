@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Predictions - HabitAI</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-container">
+      <div class="logo">HabitAI</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="predictions.html" class="active">Predictions</a></li>
+        <li><a href="log.html">Log Habit</a></li>
+        <li><a href="history.html">History</a></li>
+        <li><a href="insights.html">Insights</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="#" class="btn-outline" onclick="window.logout(); return false;">Sign Out</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container page-spacing">
+    <div class="dashboard-header">
+      <h1 class="page-title">Collapse Predictions</h1>
+      <p>AI-calculated probability of habit failure based on your current momentum and patterns</p>
+    </div>
+
+    <div id="warningBox" class="warning-box" style="display: none;">
+      <strong>🚨 HIGH RISK ALERT</strong><br>
+      7-day collapse probability exceeds 70%. Immediate action recommended.
+    </div>
+
+    <div class="cards-grid">
+      <div class="card prediction-card risk-high">
+        <h3>3 Days</h3>
+        <div class="stat-number" style="font-size: 3rem;" id="risk3d">—</div>
+        <div id="label3d" style="font-weight: 600;">—</div>
+        <div class="progress-container">
+          <div class="progress-bar">
+            <div class="progress-fill" id="progress3d" style="width: 0%;" data-percent="0"></div>
+          </div>
+        </div>
+      </div>
+      <div class="card prediction-card risk-medium">
+        <h3>7 Days</h3>
+        <div class="stat-number" style="font-size: 3rem;" id="risk7d">—</div>
+        <div id="label7d" style="font-weight: 600;">—</div>
+        <div class="progress-container">
+          <div class="progress-bar">
+            <div class="progress-fill" id="progress7d" style="width: 0%;" data-percent="0"></div>
+          </div>
+        </div>
+      </div>
+      <div class="card prediction-card risk-low">
+        <h3>14 Days</h3>
+        <div class="stat-number" style="font-size: 3rem;" id="risk14d">—</div>
+        <div id="label14d" style="font-weight: 600;">—</div>
+        <div class="progress-container">
+          <div class="progress-bar">
+            <div class="progress-fill" id="progress14d" style="width: 0%;" data-percent="0"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="insight-card" style="text-align: center; margin-top: 2rem;">
+      <h4>Prediction Factors</h4>
+      <p style="margin-top: 0.5rem; opacity: 0.9;">
+        Drift Days: <span id="driftFactor">0</span> | 
+        Momentum: <span id="momentumFactor">0%</span> | 
+        Consistency: <span id="consistencyFactor">0%</span>
+      </p>
+    </div>
+
+    <div class="chart-card" style="margin-top: 2rem;">
+      <h3>📊 Collapse Risk Trend (Last 30 Days)</h3>
+      <div style="position: relative; height: 300px;">
+        <canvas id="riskTrendChart"></canvas>
+      </div>
+      <p style="text-align: center; opacity: 0.7; margin-top: 1rem; font-size: 0.9rem;">Lower risk % = Better habit consistency</p>
+    </div>
+
+    <div style="text-align: center; margin-top: 1.5rem;">
+      <span id="predictionGrade" style="font-weight: 700; font-size: 1.2rem; padding: 0.5rem 1.2rem; background: rgba(255,255,255,0.05); border-radius: 8px;">—</span>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
